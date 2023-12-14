@@ -20,9 +20,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          # fetch-depth: 0
           lfs: true
           # submodules: true
+
+      - name: Install Pandoc
+        shell: bash
+        run: |
+          sudo apt update
+          sudo apt install -y pandoc
 
       - name: 设置 Node.js
         uses: actions/setup-node@v3
