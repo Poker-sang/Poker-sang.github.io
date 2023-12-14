@@ -1,0 +1,44 @@
+- class_name: 框架
+  flink_style: telescopic
+  hundredSuffix: ""
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/
+      avatar: /img/dependencies/hexo.svg
+      descr: 快速、简单且强大的网站框架
+    - name: anzhiyu
+      link: https://blog.anheyu.com/
+      avatar: /img/dependencies/anzhiyu.jpg
+      descr: 生活明朗，万物可爱
+    - name: MongoDB
+      link: https://www.mongodb.com/
+      avatar: /img/dependencies/mongodb.svg
+      descr: 构建更快速。构建更智能。
+    - name: Vercel
+      link: https://vercel.com/
+      avatar: /img/dependencies/vercel.svg
+      descr: Develop. Preview. Ship.
+      # siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
+
+# - class_name: 推荐博客
+#   flink_style: flexcard
+#   hundredSuffix: ""
+#   link_list:
+#     - name: 安知鱼
+#       link: https://blog.anheyu.com/
+#       avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+#       descr: 生活明朗，万物可爱
+#       siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
+#       color: vip
+#       tag: 技术
+
+- class_name: 小伙伴
+  class_desc: 那些人，那些事
+  flink_style: anzhiyu
+  hundredSuffix: ""
+  link_list:
+    - name: irol
+      link: https://www.inori.moe/
+      avatar: /img/friends/irol.jpg
+      descr: 
+      # recommend: true

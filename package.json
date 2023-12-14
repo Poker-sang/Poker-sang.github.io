@@ -4,8 +4,8 @@
   "private": true,
   "packageManager": "yarn@4.0.2",
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
+    "build": "hexo bangumi -u && hexo cinema -u && hexo generate",
+    "clean": "hexo bangumi -d && hexo cinema -d && hexo clean",
     "dev": "hexo server"
   },
   "hexo": {

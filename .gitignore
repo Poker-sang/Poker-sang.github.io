@@ -15,3 +15,5 @@
 node_modules
 dist
 db.json
+Bangumi-Api-Cache
+bangumis.json
