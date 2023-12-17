@@ -574,7 +574,7 @@ cloudflare_analytics:
 
 # Microsoft Clarity
 # https://clarity.microsoft.com/
-microsoft_clarity:
+microsoft_clarity: /js/microsoft.js
 
 # Advertisement
 # --------------------------------------
@@ -613,7 +613,7 @@ site_verification:
 theme_color:
   enable: true
   main: "#425AEF"
-  dark_main: "#f2b94b"
+  dark_main: "#0078D4"
   paginator: "#425AEF"
   #   button_hover: "#FF7242"
   text_selection: "#2128bd"
