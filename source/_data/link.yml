@@ -37,6 +37,10 @@
   flink_style: anzhiyu
   hundredSuffix: ""
   link_list:
+    - name: Dylech30th
+      link: https://sora.ink/
+      avatar: https://sora.ink/wp-content/uploads/2023/12/6aba06f93d5e08829cd4bb19c0782349fced359f.jpg@120w_120h_1c.png
+      descr: 笨比
     - name: irol
       link: https://www.inori.moe/
       avatar: https://www.inori.moe/img/avatar.JPG
@@ -45,8 +49,4 @@
       link: https://frg2089.github.io/
       avatar: https://cravatar.cn/avatar/8aa3a373ab407b250e866cc7ed5deea8?s=400
       descr: 为笨蛋扑克的博客提供强有力的技术支持！
-    - name: Dylech30th
-      link: https://sora.ink/
-      avatar: https://sora.ink/wp-content/uploads/2023/12/6aba06f93d5e08829cd4bb19c0782349fced359f.jpg@120w_120h_1c.png
-      descr: 
       # recommend: true
