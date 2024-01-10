@@ -36,11 +36,11 @@ __metadata:
   linkType: hard
 
 "@babel/runtime@npm:^7.18.0":
-  version: 7.23.6
-  resolution: "@babel/runtime@npm:7.23.6"
+  version: 7.23.8
+  resolution: "@babel/runtime@npm:7.23.8"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
-  checksum: d886954e985ef8e421222f7a2848884d96a752e0020d3078b920dd104e672fdf23bcc6f51a44313a048796319f1ac9d09c2c88ec8cbb4e1f09174bcd3335b9ff
+  checksum: ba5e8fbb32ef04f6cab5e89c54a0497c2fde7b730595cc1af93496270314f13ff2c6a9360fdb2f0bdd4d6b376752ce3cf85642bd6b876969a6a62954934c2df8
   languageName: node
   linkType: hard
 
@@ -233,13 +233,13 @@ __metadata:
   linkType: hard
 
 "axios@npm:^1.0.0":
-  version: 1.6.2
-  resolution: "axios@npm:1.6.2"
+  version: 1.6.5
+  resolution: "axios@npm:1.6.5"
   dependencies:
-    follow-redirects: "npm:^1.15.0"
+    follow-redirects: "npm:^1.15.4"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 9b77e030e85e4f9cbcba7bb52fbff67d6ce906c92d213e0bd932346a50140faf83733bf786f55bd58301bd92f9973885c7b87d6348023e10f7eaf286d0791a1d
+  checksum: aeb9acf87590d8aa67946072ced38e01ca71f5dfe043782c0ccea667e5dd5c45830c08afac9be3d7c894f09684b8ab2a458f497d197b73621233bcf202d9d468
   languageName: node
   linkType: hard
 
@@ -260,9 +260,9 @@ __metadata:
   linkType: hard
 
 "bangumi-data@npm:^0.3.91":
-  version: 0.3.127
-  resolution: "bangumi-data@npm:0.3.127"
-  checksum: 958f2bccbd0adfdd60fc214e944a3f2fdca2902c7c6db744e6e5fcef71ca48d950a4179d796e37f04b433c6a0ebdf69aba5188aea8b032d9921317273b792978
+  version: 0.3.129
+  resolution: "bangumi-data@npm:0.3.129"
+  checksum: fc4d2ec099127dcd5bfeef36b27952c02cea151b89088f96ab0f91a75c3ca176afbacae98a03b7f42d1c0966a63952d1dd24cb422584f85556b553dac8593bbb
   languageName: node
   linkType: hard
 
@@ -332,8 +332,8 @@ __metadata:
   linkType: hard
 
 "cacache@npm:^18.0.0":
-  version: 18.0.1
-  resolution: "cacache@npm:18.0.1"
+  version: 18.0.2
+  resolution: "cacache@npm:18.0.2"
   dependencies:
     "@npmcli/fs": "npm:^3.1.0"
     fs-minipass: "npm:^3.0.0"
@@ -347,7 +347,7 @@ __metadata:
     ssri: "npm:^10.0.0"
     tar: "npm:^6.1.11"
     unique-filename: "npm:^3.0.0"
-  checksum: a31666805a80a8b16ad3f85faf66750275a9175a3480896f4f6d31b5d53ef190484fabd71bdb6d2ea5603c717fbef09f4af03d6a65b525c8ef0afaa44c361866
+  checksum: 7992665305cc251a984f4fdbab1449d50e88c635bc43bf2785530c61d239c61b349e5734461baa461caaee65f040ab14e2d58e694f479c0810cffd181ba5eabc
   languageName: node
   linkType: hard
 
@@ -901,13 +901,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.15.0":
-  version: 1.15.3
-  resolution: "follow-redirects@npm:1.15.3"
+"follow-redirects@npm:^1.15.4":
+  version: 1.15.4
+  resolution: "follow-redirects@npm:1.15.4"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 915a2cf22e667bdf47b1a43cc6b7dce14d95039e9bbf9a24d0e739abfbdfa00077dd43c86d4a7a19efefcc7a99af144920a175eedc3888d268af5df67c272ee5
+  checksum: 5f37ed9170c9eb19448c5418fdb0f2b73f644b5364834e70791a76ecc7db215246f9773bbef4852cfae4067764ffc852e047f744b661b0211532155b73556a6a
   languageName: node
   linkType: hard
 
@@ -1414,14 +1414,14 @@ __metadata:
   linkType: hard
 
 "htmlparser2@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "htmlparser2@npm:9.0.0"
+  version: 9.1.0
+  resolution: "htmlparser2@npm:9.1.0"
   dependencies:
     domelementtype: "npm:^2.3.0"
     domhandler: "npm:^5.0.3"
     domutils: "npm:^3.1.0"
     entities: "npm:^4.5.0"
-  checksum: 100d24059a267068c6e73b4df7b123936ad39c86203c42c43935a84965be566a4162402355ba48889c8b7a42b55f8843e673ee2b5d21f0fd67c08f074d921068
+  checksum: 394f6323efc265bbc791d8c0d96bfe95984e0407565248521ab92e2dc7668e5ceeca7bc6ed18d408b9ee3b25032c5743368a4280d280332d782821d5d467ad8f
   languageName: node
   linkType: hard
 
@@ -1979,18 +1979,18 @@ __metadata:
   linkType: hard
 
 "moment-timezone@npm:^0.5.34":
-  version: 0.5.43
-  resolution: "moment-timezone@npm:0.5.43"
+  version: 0.5.44
+  resolution: "moment-timezone@npm:0.5.44"
   dependencies:
     moment: "npm:^2.29.4"
-  checksum: 6f42174e01398d135883fb45aa820e57f34b25aab5ea6c50998139d06f975ee4457275b5e331466b14bff4d830e681c267f9cc462f445eb9c2b84d04add829f6
+  checksum: f29ab17576fdd3fe3ac9ff3e85b16127012033b39458a1ed3526853f46c2d9617ab2b9a29eb0fcc6b97d3108e5256a5c2d84a86c2492a553c0c101fe59066394
   languageName: node
   linkType: hard
 
 "moment@npm:^2.29.1, moment@npm:^2.29.4":
-  version: 2.29.4
-  resolution: "moment@npm:2.29.4"
-  checksum: 844c6f3ce42862ac9467c8ca4f5e48a00750078682cc5bda1bc0e50cc7ca88e2115a0f932d65a06e4a90e26cb78892be9b3ca3dd6546ca2c4d994cebb787fc2b
+  version: 2.30.1
+  resolution: "moment@npm:2.30.1"
+  checksum: 865e4279418c6de666fca7786607705fd0189d8a7b7624e2e56be99290ac846f90878a6f602e34b4e0455c549b85385b1baf9966845962b313699e7cb847543a
   languageName: node
   linkType: hard
 
@@ -2493,9 +2493,9 @@ __metadata:
   linkType: hard
 
 "regenerator-runtime@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "regenerator-runtime@npm:0.14.0"
-  checksum: e25f062c1a183f81c99681691a342760e65c55e8d3a4d4fe347ebe72433b123754b942b70b622959894e11f8a9131dc549bd3c9a5234677db06a4af42add8d12
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 1b16eb2c4bceb1665c89de70dcb64126a22bc8eb958feef3cd68fe11ac6d2a4899b5cd1b80b0774c7c03591dc57d16631a7f69d2daa2ec98100e2f29f7ec4cc4
   languageName: node
   linkType: hard
 
