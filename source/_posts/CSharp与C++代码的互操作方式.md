@@ -82,8 +82,7 @@ P/Invoke流程图
 
 {% mermaid %}
 flowchart LR
-    B-->C-->F--平台调用
-    （封送处理）-->G
+    B-->C-->F--平台调用<br/>封送处理-->G
     D~~~E
     subgraph 非托管
         subgraph G[DLL]
@@ -116,16 +115,14 @@ flowchart LR
         A[托管应用程序]
         B[元数据代理]
         C[COM组件类型库]
-        D([类型库导入程序
-        （TlbImp.exe）])
+        D([类型库导入程序<br/>TlbImp.exe])
     end
-    E[运行库课调用包装
-    （RCW）]
+    E[运行库课调用包装<br/>RCW]
     subgraph 非托管COM代码
         F[COM对象]
-        X((·))
-        Y((·))
-        Z((·))
+        X((&ensp;))
+        Y((&ensp;))
+        Z((&ensp;))
     end
 {% endmermaid %}
 
