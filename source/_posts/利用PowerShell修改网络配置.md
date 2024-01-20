@@ -13,6 +13,8 @@ tags:
 
 ## 新的修改方法：Common Information Model (CIM)
 
+参考[^GetCimInstance]
+
 ```PowerShell
 param([int] $inputNum)
 
@@ -50,6 +52,8 @@ else {
 ```
 
 ## 旧的修改方法：Windows Management Instrumentation (WMI)
+
+参考[^GetWmiObject]
 
 ```PowerShell
 param([int] $inputNum)
@@ -160,12 +164,10 @@ public static class NetworkAdapter
 }
 ```
 
-## 代码仓库
+## 完整代码（Github）
 
-Github: <https://github.com/Poker-sang/NetworkAdapter>
+<https://github.com/Poker-sang/NetworkAdapter>
 
-## 参考资料
+[^GetCimInstance]: [Get-CimInstance](https://learn.microsoft.com/powershell/scripting/samples/getting-wmi-objects--get-ciminstance-)
 
-1. [Get-CimInstance](https://learn.microsoft.com/powershell/scripting/samples/getting-wmi-objects--get-ciminstance-)
-
-2. [Get-WmiObject](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject)
+[^GetWmiObject]: [Get-WmiObject](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject)

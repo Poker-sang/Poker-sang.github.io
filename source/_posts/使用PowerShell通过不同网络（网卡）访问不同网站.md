@@ -11,7 +11,7 @@ tags:
 
 在学校生活时经常有一种需求：访问某些网站（如校内系统）时需要使用校园网，访问另一些网站（如Steam、Github等）校园网很慢，需要使用手机浏览器等其他网络加速。此时我就觉得如果能同时使用两个网络该多好。
 
-本文就介绍如何用PowerShell实现这个功能（需要Windows平台，版本XP及以上）。
+本文就介绍如何用PowerShell[^NetTcpIp]实现这个功能（需要Windows平台，版本XP及以上）。
 
 ## 原理
 
@@ -175,7 +175,7 @@ ifIndex DestinationPrefix                              NextHop                  
 
 这些路由前面网段都是0.0.0.0/0（或::/0），表示全网段都可以使用这个路由。
 
-从`Metric`可以发现，绝大多数电脑同时连有线和无线网时，都是有线网的`Metric`比较小，这也是为什么路由总是会优先选择有线网连接。Windows默认开启了`AutomaticMetric`，会按照带宽网速自动设定`Metric`[<sup>2<sup/>](#refer-anchor-2)，有需要可以去设置关闭
+从`Metric`可以发现，绝大多数电脑同时连有线和无线网时，都是有线网的`Metric`比较小，这也是为什么路由总是会优先选择有线网连接。Windows默认开启了`AutomaticMetric`，会按照带宽网速自动设定`Metric`[^metric]，有需要可以去设置关闭
 
 ### 设备地址
 
@@ -343,15 +343,10 @@ Set-AdapterRoute $info "Realtek PCIe GbE Family Controller" 172.18.6.57/32
 Set-AdapterRoute $info "Intel(R) Wi-Fi 6 AX200 160MHz" 0.0.0.0/0
 ```
 
-## 代码仓库
+我的代码仓库[^repo]里包含完整PowerShell脚本和部分C++方法。
 
-包含完整PowerShell脚本和部分C++方法。
+[^repo]: [RouteModifier](https://github.com/Poker-sang/RouteModifier)
 
-Github：<https://github.com/Poker-sang/RouteModifier>
+[^NetTcpIp]: [NetTcpIp](https://learn.microsoft.com/powershell/module/nettcpip)
 
-## 参考资料
-
-1. [NetTcpIp](https://learn.microsoft.com/powershell/module/nettcpip)
-
-<div id="refer-anchor-2"/>
-2. [Automatic Metric](https://learn.microsoft.com/troubleshoot/windows-server/networking/automatic-metric-for-ipv4-routes)
+[^metric]: [Automatic Metric](https://learn.microsoft.com/troubleshoot/windows-server/networking/automatic-metric-for-ipv4-routes)

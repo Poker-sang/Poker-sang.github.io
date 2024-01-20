@@ -4,7 +4,6 @@ date: 2021-06-25
 categories: 编程
 tags:
 - 键盘
-- 注册表
 - C/C++
 - Windows
 ---
@@ -44,7 +43,7 @@ Qwerty键盘（Qwerty Keyboard）
 | A   | O   | E   | U   | I   | D   | H   | T   | N   | S   | - _ |     |
 |     | ; : | Q   | J   | K   | X   | B   | M   | W   | V   | Z   |     |
 
-此外，根据维基百科[<sup>2<sup/>](#refer-anchor-2)：
+此外，根据维基百科[^wiki]：
 
 > 钩子编程（Hooking），也称作“挂钩”，是计算机程序设计术语，指通过拦截软件模块间的函数调用、消息传递、事件传递来修改或扩展操作系统、应用程序或其他软件组件的行为的各种技术。处理被拦截的函数调用、事件、消息的代码，被称为钩子（Hook）。
 
@@ -256,7 +255,7 @@ inline LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 
 `IsKeyPressed()`：当按键按下时，`GetKeyState()`返回值（SHORT类型）的最高位为`1`，否则为`0`，所以与图中`1<<(sizeof(SHORT)*8-1)`按位与结果不为`0`就是按下，为`0`就是没按下。
 
-下面是一个`for`循环，找到原键位的键后映射到新的键，用`Kbe()`（`keybd_event()`）进行处理。有四个参数，第一个填虚拟键值，之前已经定义好；第二个填扫描码（可见上个专栏），但可以不填；第三填选项标志，键抬起时为`KEYEVENTF_KEYUP`，落下时为`0`，此处填`0`；最后一个是附加信息，要填`1<<24`因为根据MSDN[<sup>3<sup/>](#refer-anchor-3)，最后一个`ULONG_PTR`类型参数对应了`p`中的`dwExtraInfo`，可以传递额外的信息，而`dwExtraInfo`只有25-28位是保留的，其他都会被其他的信息占据，所以填`1<<24`（刚好到25位）。如果不是我们目标的键，进入`default`，也不处理。
+下面是一个`for`循环，找到原键位的键后映射到新的键，用`Kbe()`（`keybd_event()`）进行处理。有四个参数，第一个填虚拟键值，之前已经定义好；第二个填扫描码（可见上个专栏），但可以不填；第三填选项标志，键抬起时为`KEYEVENTF_KEYUP`，落下时为`0`，此处填`0`；最后一个是附加信息，要填`1<<24`因为根据MSDN[^msdn]，最后一个`ULONG_PTR`类型参数对应了`p`中的`dwExtraInfo`，可以传递额外的信息，而`dwExtraInfo`只有25-28位是保留的，其他都会被其他的信息占据，所以填`1<<24`（刚好到25位）。如果不是我们目标的键，进入`default`，也不处理。
 
 最后，如果处理了数据就返回`1`，表示屏蔽原来的事件并发送已编辑的新事件，第二次再被抓获时会因为`dwExtraInfo`的标志而直接不处理跳过；如果不处理数据则直接放行事件，并让下一个钩子再处理。
 
@@ -270,12 +269,6 @@ C：<https://github.com/Poker-sang/KeyboardCorrector/blob/main/KeyboardCorrector
 
 C++（C++/CLI）：<https://github.com/Poker-sang/KeyboardCorrector/blob/main/KeyboardCorrector/KeyboardCorrector.h>
 
-## 感谢指导及参考资料
+[^wiki]: [Wikipedia](https://zh.wikipedia.org/zh-hans/钩子编程)
 
-1. [Dylech30th](https://space.bilibili.com/21577236)
-
-<div id="refer-anchor-2"/>
-2. [Wikipedia](https://zh.wikipedia.org/zh-hans/钩子编程)
-
-<div id="refer-anchor-3"/>
-3. [微软文档](https://docs.microsoft.com/en-us/windows/win32/api/winuser)
+[^msdn]: [微软文档](https://docs.microsoft.com/en-us/windows/win32/api/winuser)

@@ -5,7 +5,7 @@ categories: 编程
 tags:
 - C#
 - .NET
-- C++
+- C/C++
 - COM
 - 平台调用
 ---
@@ -66,7 +66,7 @@ HRESULT Test(int executions)
 }
 ```
 
-源代码可以参见仓库[<sup>1<sup/>](#refer-anchor-1)，
+源代码可以参见仓库[^InteropPerformanceTest]，
 我在Windows11 64位系统下运行，使用.NET 8运行时，以下是测试结果：
 
 | 调用/执行次数 | P/Invoke | C++ Interop | COM Interop |
@@ -133,7 +133,7 @@ P/Invoke的两端是标准的C/C++和标准的C#（.NET）代码，是保持可�
 但它的缺点是无法导出类，如果大型项目有面对对象的需求（类似于DirectX）则不是最优选择。
 
 C++ Interop灵活性非常高，可以准确控制封送过程，所以性能理论上也更好。
-但是缺点[<sup>2<sup/>](#refer-anchor-2)也更严重，它只能面向Windows平台，
+但是缺点[^cppcli]也更严重，它只能面向Windows平台，
 很多情况下这个缺点是不能接受的。如果目标项目是只面向Windows平台（如WinForm，WPF等），
 且要调用大量本地API，而且对性能要求较苛刻的情况下，可以考虑使用。
 
@@ -141,12 +141,10 @@ COM有着很复杂的内部结构，学习成本较高。如果写小型项目�
 但如果接触Windows平台编程，几乎绕不开调用COM，所以也要对调用COM代码有一定程度的了解。
 同时也要避免创建大量COM对象，这可能导致性能低下。
 
-## 参考资料
+可以参考《精通.NET互操作 P/Invoke，C++Interop和COM Interop》[^book]这本书来学习。
 
-<div id="refer-anchor-1"/>
-1. [InteropPerformanceTest](https://github.com/Poker-sang/InteropPerformanceTest)
+[^InteropPerformanceTest]: [InteropPerformanceTest](https://github.com/Poker-sang/InteropPerformanceTest)
 
-<div id="refer-anchor-2"/>
-2. [C++/CLI .NET Core 限制](https://learn.microsoft.com/dotnet/core/porting/cpp-cli#ccli-net-core-limitations)
+[^cppcli]: [C++/CLI .NET Core 限制](https://learn.microsoft.com/dotnet/core/porting/cpp-cli#ccli-net-core-limitations)
 
-3. 《精通.NET互操作 P/Invoke，C++Interop和COM Interop》 黄际洲 崔晓源 著
+[^book]: 《精通.NET互操作 P/Invoke，C++Interop和COM Interop》 黄际洲 崔晓源 著

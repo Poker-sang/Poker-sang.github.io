@@ -20,7 +20,7 @@ tags:
 
 ## 确定目标
 
-首先明确要将键盘修改成什么样子，我以网上[<sup>1</sup>](#refer-anchor-1)找到的一种键盘布局为例。
+首先明确要将键盘修改成什么样子，我以网上[^kb]找到的一种键盘布局为例。
 
 |     |     |     |     |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -40,7 +40,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 在该目录下右键点击**新建二进制值**，名称为**Scancode Map**，并打开。
 
-接下来按照如下格式[<sup>2</sup>](#refer-anchor-2)输入自己需要更改的键位：
+接下来按照如下格式[^win10kb]输入自己需要更改的键位：
 
 ```Binary
 00 00 00 00 00 00 00 00（固定格式）
@@ -123,10 +123,6 @@ XX XX XX XX（另一个要替换的按键，同上）
 
 注：若要回到默认映射，在注册表中删除本**Scancode Map**文件即可。
 
-## 参考资料
+[^kb]: [给中国人的键盘 —适合中英文双输入的键盘布局](http://www.docin.com/p-23672137.html)
 
-<div id="refer-anchor-1"/>
-1. [给中国人的键盘 —适合中英文双输入的键盘布局](http://www.docin.com/p-23672137.html)
-
-<div id="refer-anchor-2"/>
-2. [Windows10 修改键位映射](https://blog.csdn.net/lhdalhd1996/article/details/90741092)
+[^win10kb]: [Windows10 修改键位映射](https://blog.csdn.net/lhdalhd1996/article/details/90741092)
