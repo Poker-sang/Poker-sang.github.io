@@ -126,7 +126,7 @@ public sealed partial class SamplePage : Page
 <ItemsRepeater ItemsSource="{x:Bind ViewModels}">
     <ItemsRepeater.ItemTemplate>
         <DataTemplate x:DataType="local:ViewModel">
-            <TextBlock Text="{Binding Converter={StaticResource UnboxConverter}, ConverterParameter={StaticResource Box}}" />
+            <TextBlock Text="{x:Bind Converter={StaticResource UnboxConverter}, ConverterParameter={StaticResource Box}}" />
         </DataTemplate>
     </ItemsRepeater.ItemTemplate>
 </ItemsRepeater>
@@ -137,7 +137,7 @@ public sealed partial class SamplePage : Page
 
 这种方法优点是十分灵活，处理方法写在`Converter`里，传递参数写在`Box`里，可以随意扩展，几乎没有限制。
 
-缺点也很明显，写了许多不明所以的代码，逻辑曲折难懂，`Binding`效率也较差。
+缺点也很明显，写了许多不明所以的代码，逻辑曲折难懂，而且外部`OuterMember`变化后难以通知到内部。
 
 ### 事件处理
 
