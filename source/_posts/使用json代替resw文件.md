@@ -1,14 +1,14 @@
 ---
 title: 使用json代替resw文件
 date: 2024-01-20
-categories: 编程
+categories: WinUI
 tags:
 - C#
 - .NET
 ---
 ## 前言
 
-在写WinUI3或UWP项目的时候，总觉得resw文件冗长可读性又差，希望要是能用json就好了。
+在写WinUI 3或UWP项目的时候，总觉得resw文件冗长可读性又差，希望要是能用json就好了。
 我在测试MakePri.exe[^makepri]的时候意外发现了它支持一种叫resjson的文件，可以用以取代resw。
 
 本文假定读者以有resw[^resw]的使用基础。

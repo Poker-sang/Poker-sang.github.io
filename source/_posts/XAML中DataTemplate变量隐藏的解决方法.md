@@ -1,7 +1,7 @@
 ---
 title: XAML中DataTemplate变量隐藏的解决方法
 date: 2023-11-13
-categories: 编程
+categories: WinUI
 tags:
 - C#
 - .NET
@@ -9,7 +9,7 @@ tags:
 ---
 ## 前言
 
-微软的许多XAML框架，如WPF、UWP、WinUI3等，在`DataTemplate`下都会遇到变量隐藏（Variable shadowing）的问题。为了访问外部实例成员，经常需要写很多曲折的代码，但也没有办法。本文也无法解决这个问题，但记录了我知道的方法，以便在各种情况使用，争取将可读性的影响降到最低。
+微软的许多XAML框架，如WPF、UWP、WinUI 3等，在`DataTemplate`下都会遇到变量隐藏（Variable shadowing）的问题。为了访问外部实例成员，经常需要写很多曲折的代码，但也没有办法。本文也无法解决这个问题，但记录了我知道的方法，以便在各种情况使用，争取将可读性的影响降到最低。
 
 ## 问题再现
 
