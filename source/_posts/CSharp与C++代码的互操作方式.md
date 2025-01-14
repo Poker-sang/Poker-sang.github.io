@@ -117,7 +117,7 @@ flowchart LR
         C[COM组件类型库]
         D([类型库导入程序<br/>TlbImp.exe])
     end
-    E[运行库调用包装<br/>RCW]
+    E[运行库可调用包装<br/>RCW]
     subgraph 非托管COM代码
         F[COM对象]
         X((&ensp;))
