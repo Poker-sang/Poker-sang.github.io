@@ -18,9 +18,9 @@ projects:
     link: https://www.inori.moe/
     desc: 推荐了hexo
 
-  - icon: https://cravatar.cn/avatar/8aa3a373ab407b250e866cc7ed5deea8?s=400
+  - icon: https://blog.shimakaze.dev/avatar.webp
     name: 岛风
-    link: https://frg2089.github.io/
+    link: https://blog.shimakaze.dev/
     desc: 为笨蛋扑克的博客提供强有力的技术支持！
 
   - icon: https://sora.ink/wp-content/uploads/2023/12/6aba06f93d5e08829cd4bb19c0782349fced359f.jpg@120w_120h_1c.png
