@@ -1,0 +1,67 @@
+name: 部署文档
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/deploy-docs.yml
+      - docs/**
+      - package.json
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUSKY: 0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+          # submodules: true
+
+      - name: 设置 pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: pnpm
+
+      - name: 安装依赖
+        run: pnpm install
+
+      - name: 构建文档
+        run: pnpm build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: 'docs/.vuepress/dist'
+
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

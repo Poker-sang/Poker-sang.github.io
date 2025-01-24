@@ -1,32 +1,53 @@
 {
-  "name": "poker-sang.blog",
-  "version": "0.0.0",
+  "name": "poker-sang-blog",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "扑克博客站",
+  "license": "MIT",
   "private": true,
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "pnpm@9.15.4+sha256.9bee59c7313a216722c079c1e22160dea7f88df4e0c3450b1d7b01b882336c6a",
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "dev": "hexo server"
-  },
-  "hexo": {
-    "version": "7.0.0"
+    "build": "vuepress-vite build docs",
+    "clean-dev": "vuepress-vite dev docs --clean-cache",
+    "dev": "vuepress-vite dev docs",
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "update-package": "pnpm dlx vp-update@next"
   },
   "devDependencies": {
-    "hexo": "^7.0.0",
-    "hexo-bilibili-bangumi": "^1.8.9",
-    "hexo-butterfly-envelope": "^1.0.15",
-    "hexo-deployer-git": "^4.0.0",
-    "hexo-filter-mathjax": "^0.9.0",
-    "hexo-generator-archive": "^2.0.0",
-    "hexo-generator-category": "^2.0.0",
-    "hexo-generator-index": "^3.0.0",
-    "hexo-generator-tag": "^2.0.0",
-    "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-pandoc": "^0.4.0",
-    "hexo-renderer-pug": "^3.0.0",
-    "hexo-renderer-stylus": "^3.0.0",
-    "hexo-server": "^3.0.0",
-    "hexo-theme-anzhiyu": "^1.6.12",
-    "hexo-util": "^3.1.0"
+    "@vuepress/bundler-vite": "2.0.0-rc.19",
+    "@vuepress/plugin-blog": "2.0.0-rc.73",
+    "@vuepress/plugin-comment": "2.0.0-rc.73",
+    "@vuepress/plugin-feed": "2.0.0-rc.73",
+    "htmlparser2": "^10.0.0",
+    "husky": "^9.1.7",
+    "mathjax-full": "^3.2.2",
+    "mermaid": "^11.4.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-pkg": "^0.18.1",
+    "sass-embedded": "^1.83.4",
+    "typescript": "^5.7.3",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.19",
+    "vuepress-theme-hope": "2.0.0-rc.70"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "auto",
+    "plugins": [
+      "prettier-plugin-organize-imports",
+      "prettier-plugin-pkg"
+    ]
   }
 }
