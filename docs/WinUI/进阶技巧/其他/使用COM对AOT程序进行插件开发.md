@@ -62,7 +62,7 @@ flowchart LR
 
 ## 两种主要的AOT+COM插件方式
 
-有多种加载COM插件的方式，一种称为OOP（Out Of Process，进程外），另一种称为InProc（In Process，进程内，又叫LocalServer方式），各有利弊。此外还有DCOM（Distributed COM，分布式COM）用于网络通信，但不常用。
+有多种加载COM插件的方式，一种称为OOP（Out Of Process，进程外，又叫LocalServer方式），另一种称为InProc（In Process，进程内），各有利弊。此外还有DCOM（Distributed COM，分布式COM）用于网络通信，但不常用。
 
 OOP方式使用MsRpc框架，是跨进程通信，所以比较灵活，同时跨进程通信可能导致内存泄漏，效率也不是很高。[Dev Home](https://github.com/microsoft/devhome)就是使用这种方式实现的，感兴趣的可以看看它的源代码。
 
