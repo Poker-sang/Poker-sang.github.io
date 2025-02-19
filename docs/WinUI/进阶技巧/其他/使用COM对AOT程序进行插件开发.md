@@ -229,28 +229,23 @@ public partial interface IFoo2
 
 ### 加载和卸载插件
 
-在AOT环境下，不能使用`Assembly.Load`这种方式加载程序集，那我们只能使用最基础的`LoadLibrary`函数：
+在AOT环境下，不能使用`Assembly.Load`这种方式加载程序集，那我们只能使用最基础的本机`Load`函数：
+
+* 注：根据微软文档[《生成本机库》](https://learn.microsoft.com/dotnet/core/deploying/native-aot/libraries)，目前AOT的dll还不能使用`Free`等任何方法卸载，所以此处只是为了示范、或卸载本机语言编写的dll。
 
 ```cs
+using System.Runtime.InteropServices;
+nint hModule = 0;
 try
 {
-    var hModule = LoadLibrary("path/to/your/aot/dll");
+    hModule = NativeLibrary.Load("path/to/your/aot/dll");
+    if (hModule is 0)
+        return;
     // use hModule ...
 }
 finally
 {
-    _ = FreeLibrary(hModule);
-}
-
-// 建议使用Microsoft.Windows.CsWin32自动生成此函数引用，此处这样写为了方便演示
-public static partial class Win32NativeMethods
-{
-    [LibraryImport("kernel32.dll", EntryPoint = "LoadLibraryW", SetLastError = true, StringMarshalling = StringMarshalling.Utf16)]
-    public static partial nint LoadLibrary(string libFilename);
-
-    [LibraryImport("kernel32.dll")]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    internal static partial bool FreeLibrary(nint hModule);
+    NativeLibrary.Free(hModule);
 }
 ```
 
@@ -258,9 +253,13 @@ public static partial class Win32NativeMethods
 得到这个指定的函数后，可以让它把自己的对象封装为指针`ccw`并返回，这样我们用COM通信就得到了第一个.NET对象：
 
 ```cs
+using System.Runtime.InteropServices;
+nint hModule = 0;
 try
 {
-    var hModule = LoadLibrary("path/to/your/aot/dll");
+    hModule = NativeLibrary.Load("path/to/your/aot/dll");
+    if (hModule is 0)
+        return;
     var funcPtr = GetProcAddress(hModule, nameof(DllGetObject));
     var func = Marshal.GetDelegateForFunctionPointer<DllGetObject>(funcPtr);
     if (func(out nint ccw) is not 0)
@@ -273,16 +272,7 @@ try
 }
 finally
 {
-    _ = FreeLibrary(hModule);
-}
-
-// 建议使用Microsoft.Windows.CsWin32自动生成此函数引用，此处这样写为了方便演示
-public static partial class Win32NativeMethods
-{
-    // ...
-
-    [LibraryImport("kernel32.dll", SetLastError = true)]
-    public static partial nint GetProcAddress(nint hModule, [MarshalAs(UnmanagedType.LPStr)] string lpProcName);
+    NativeLibrary.Free(hModule);
 }
 
 public delegate int DllGetObject(out nint ppv);

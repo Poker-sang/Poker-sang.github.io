@@ -1,6 +1,6 @@
 ---
 title: 让Visual Studio的终端拥有命令补全（PSReadLine）
-date: 2020-10-18
+date: 2025-02-13
 category:
   - 编程
 tag:
