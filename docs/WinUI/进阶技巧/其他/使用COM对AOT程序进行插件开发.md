@@ -161,7 +161,7 @@ public partial interface IFoo
 }
 ```
 
-而数组稍微麻烦一些，它需要指定长度。传入数组还比较方便，加一个长度参数即可：
+而数组稍微麻烦一些，它需要指定长度。但也只需要加一个长度参数即可：
 
 ```cs
 [GeneratedComInterface]
@@ -171,38 +171,11 @@ public partial interface IFoo
     void ArrayMethod(
         [MarshalUsing(CountElementName = nameof(count))] int[] array,
         int count);
+
+    [return: MarshalUsing(CountElementName = nameof(count))]
+    int[] GetArray(out int count);
 }
 ```
-
-而传出数组则比较麻烦，因为事先不知道它的长度，那么一般有两个思路：
-
-1. 类似于迭代器，一个一个获取：
-
-   ```cs
-   [GeneratedComInterface]
-   [Guid(...)]
-   public partial interface IFoo
-   {
-       [return: MarshalAs(UnmanagedType.Bool)]
-       bool NextArrayItem(out int next);
-   }
-   ```
-
-   其中返回值表示还有没有更多元素，若有，则`next`中值有效。
-
-2. 另一种方法也是我比较喜欢使用的方法，即调用两次，第一次获取长度，第二次传入长度获取数组：
-
-   ```cs
-   [GeneratedComInterface]
-   [Guid(...)]
-   public partial interface IFoo
-   {
-       int GetArrayCount();
-
-       [return: MarshalUsing(CountElementName = nameof(count))]
-       int[] GetArray(int count);
-   }
-   ```
 
 #### 其他支持参数类型
 
@@ -351,30 +324,26 @@ public abstract partial class Foo : IFoo
 [Guid(...)]
 public partial interface IFoo
 {
-    int GetArrayCount();
-
     [return: MarshalUsing(CountElementName = nameof(count))]
-    int[] GetArray(int count);
+    int[] GetArray(out int count);
 }
 
 public static class FooHelper
 {
-    public static int[] GetArray(this IFoo foo)
-    {
-        var count = foo.GetArrayCount();
-        return foo.GetExtensions(count);
-    }
+    public static int[] GetArray(this IFoo foo) => foo.GetExtensions(out _);
 }
 
 // Extensions.SDK
 [GeneratedComClass]
 public abstract partial class FooBase : IFoo
 {
-    public abstract int[] Array { get; }
+    public abstract int[] MyArray { get; }
 
-    int IFoo.GetArray(int count) => Array;
-
-    int IFoo.GetArrayCount() => Array.Length;
+    int IFoo.GetArray(out int count)
+    {
+        count = MyArray.Length;
+        return MyArray;
+    }
 }
 ```
 
