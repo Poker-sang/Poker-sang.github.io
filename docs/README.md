@@ -33,6 +33,11 @@ projects:
     link: https://blog.azurezeng.com/
     desc: Azure Zeng 的小窝
 
+  - icon: https://zxbmmmmmmmmm.github.io/avatar.png
+    name: Betta_Fish
+    link: https://zxbmmmmmmmmm.github.io/
+    desc: Betta_Fish 的博客
+
   - icon: link
     name: 林德熙
     link: https://blog.lindexi.com/
