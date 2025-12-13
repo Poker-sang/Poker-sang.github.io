@@ -5,7 +5,7 @@
   "description": "扑克博客站",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@9.15.4+sha256.9bee59c7313a216722c079c1e22160dea7f88df4e0c3450b1d7b01b882336c6a",
+  "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501",
   "scripts": {
     "build": "vuepress-vite build docs",
     "clean-dev": "vuepress-vite dev docs --clean-cache",
