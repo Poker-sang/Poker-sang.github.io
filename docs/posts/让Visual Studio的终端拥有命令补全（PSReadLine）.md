@@ -8,6 +8,7 @@ tag:
   - PowerShell
   - Windows
 ---
+
 如果你下载了Windows Terminal和最新版的PowerShell Core就会发现，
 如果不特殊设置的话，即使我们使用的Windows Terminal拥有命令补全，Visual Studio的终端仍然没有任何补全。
 
@@ -55,15 +56,15 @@ Update-Module: Module 'PSReadLine' was not installed by using Install-Module, so
 
 - Windows Terminal模块路径
 
-    ```plaintext
-    C:\program files\windowsapps\microsoft.powershell_7.5.0.0_x64__8wekyb3d8bbwe\Modules
-    ```
+  ```plaintext
+  C:\program files\windowsapps\microsoft.powershell_7.5.0.0_x64__8wekyb3d8bbwe\Modules
+  ```
 
 - Windows PowerShell模块路径
 
-    ```plaintext
-    C:\Program Files\WindowsPowerShell\Modules
-    ```
+  ```plaintext
+  C:\Program Files\WindowsPowerShell\Modules
+  ```
 
 分别打开之后，先关闭所有PowerShell窗口，包括并不限于Visual Studio中的。
 

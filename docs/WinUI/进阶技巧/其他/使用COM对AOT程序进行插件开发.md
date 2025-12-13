@@ -204,7 +204,7 @@ public partial interface IFoo2
 
 在AOT环境下，不能使用`Assembly.Load`这种方式加载程序集，那我们只能使用最基础的本机`Load`函数：
 
-* 注：根据微软文档[《生成本机库》](https://learn.microsoft.com/dotnet/core/deploying/native-aot/libraries)，目前AOT的dll还不能使用`Free`等任何方法卸载，所以此处只是为了示范、或卸载本机语言编写的dll。
+- 注：根据微软文档[《生成本机库》](https://learn.microsoft.com/dotnet/core/deploying/native-aot/libraries)，目前AOT的dll还不能使用`Free`等任何方法卸载，所以此处只是为了示范、或卸载本机语言编写的dll。
 
 ```cs
 using System.Runtime.InteropServices;
