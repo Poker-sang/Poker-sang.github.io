@@ -108,6 +108,16 @@ export default hopeTheme({
 
     // 在启用之前安装 sandpack-vue3
     // sandpack: true,
+
+    highlighter: {
+      type: 'shiki',
+      langAlias: {
+        pwsh: 'powershell',
+        binary: 'plain',
+        url: 'plain',
+        pseudo: 'plain',
+      },
+    },
   },
 
   // 多语言配置
