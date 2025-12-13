@@ -1,5 +1,5 @@
 ---
-title: 让Visual Studio的终端拥有命令补全（PSReadLine）
+title: 让Visual Studio 2022的终端拥有命令补全（PSReadLine）
 date: 2025-02-13
 category:
   - 编程
@@ -9,10 +9,13 @@ tag:
   - Windows
 ---
 
-如果你下载了Windows Terminal和最新版的PowerShell Core就会发现，
-如果不特殊设置的话，即使我们使用的Windows Terminal拥有命令补全，Visual Studio的终端仍然没有任何补全。
+> [!IMPORTANT]
+> 已过时，仅Visual Studio 2022需要此操作，新版Visual Studio 2026内置的PowerShell已经自带命令补全（PSReadLine）
 
-这是因为Visual Studio的终端使用的是系统自带的Windows PowerShell的模块（Modules），而不是Windows Terminal的模块，
+如果你下载了Windows Terminal和最新版的PowerShell Core就会发现，
+如果不特殊设置的话，即使我们使用的Windows Terminal拥有命令补全，Visual Studio 2022的终端仍然没有任何补全。
+
+这是因为Visual Studio 2022的终端使用的是系统自带的Windows PowerShell的模块（Modules），而不是Windows Terminal的模块，
 所以看起来会有不同。
 
 而命令补全功能是由一个名为`PSReadLine`的模块提供的，Windows PowerShell中只有老版本v2.0.0，而Windows Terminal中是最新的版本。
@@ -66,11 +69,11 @@ Update-Module: Module 'PSReadLine' was not installed by using Install-Module, so
   C:\Program Files\WindowsPowerShell\Modules
   ```
 
-分别打开之后，先关闭所有PowerShell窗口，包括并不限于Visual Studio中的。
+分别打开之后，先关闭所有PowerShell窗口，包括并不限于Visual Studio 2022中的。
 
 然后删除Windows PowerShell路径下的`PSReadLine`文件夹，再将Windows Terminal路径下的`PSReadLine`文件夹复制过来即可。
 
-最后再次打开Visual Studio的终端，可以发现已经支持命令补全了。
+最后再次打开Visual Studio 2022的终端，可以发现已经支持命令补全了。
 
 ## 注意
 
