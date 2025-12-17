@@ -49,6 +49,8 @@ export default hopeTheme({
     demo: true,
     figure: true,
     gfm: true,
+    hint: true,
+    alert: true,
     linkify: false,
     imgLazyload: true,
     imgSize: true,
